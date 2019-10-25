@@ -27,6 +27,10 @@ $(document).ready(function() {
                 var showImage = $("<img>");
                 showImage.attr("src", response.data[i].images.fixed_height.url);
                 showDiv.append(showImage);
+
+                var rating = response.data[i].rating;
+                var ratingText = $("<p>").text("Rating: " + rating);
+                showDiv.append(ratingText);
                 
                 $("#tvShowView").prepend(showDiv);
             }
