@@ -4,7 +4,8 @@ $(document).ready(function() {
     
     apiKey = 'jrpNV9H93rFtvYVzLvedJKvh2j48ZUj8';
     
-    var shows = ["Doug", "Salute Your Shorts", "Step by Step"];
+    var shows = ["Doug", "Salute Your Shorts", "Step by Step", "Family Matters", "The Fresh Prince of Bel-Air", "The Jamie Foxx Show",
+    "Happy Days", "The O.C.", "The Wonder Years", "The Wayan Bros."];
     
     function displayTvShow() {
     
@@ -15,28 +16,20 @@ $(document).ready(function() {
             url: queryURL,
             method: "GET"
         }).then(function(response) {
-            // console.log(response);
             
             var results = response.data;
             console.log(results);
 
-
             var showDiv = $("<div class='show'>");
-            
-            // var urlLink = results;
             
             var showImage = $("<img>");
             showImage.attr("src", response.data[0].images.fixed_height.url);
             showDiv.append(showImage);
             
-            // var imgURL = $("<img>");
-            // imgURL.attr("src", response.data[0].url);
-            // showDiv.append(imgURL);
-            
-            var rating = response.data[0].rating;
-            console.log(rating);
-            var ratingLink = $('<p>').text("Rating: " + rating);
-            showDiv.append(ratingLink);
+            // var rating = response.data[0].rating;
+            // console.log(rating);
+            // var ratingLink = $('<p>').text("Rating: " + rating);
+            // showDiv.append(ratingLink);
             
             $("#tvShowView").prepend(showDiv);
         });
