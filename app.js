@@ -4,8 +4,8 @@ $(document).ready(function() {
     
     apiKey = 'jrpNV9H93rFtvYVzLvedJKvh2j48ZUj8';
     
-    var shows = ["Doug", "Salute Your Shorts", "Step by Step", "Family Matters", "The Fresh Prince of Bel-Air", "The Jamie Foxx Show",
-    "Happy Days", "The O.C.", "The Wonder Years", "The Wayan Bros."];
+    var shows = ["Doug", "Salute Your Shorts", "Friends", "Family Matters", "The Fresh Prince of Bel-Air", "Boy Meets World",
+    "Happy Days", "The O.C.", "Saved By The Bell", "Full House"];
     
     function displayTvShow() {
     
@@ -20,18 +20,17 @@ $(document).ready(function() {
             var results = response.data;
             console.log(results);
 
-            var showDiv = $("<div class='show'>");
-            
-            var showImage = $("<img>");
-            showImage.attr("src", response.data[0].images.fixed_height.url);
-            showDiv.append(showImage);
-            
-            // var rating = response.data[0].rating;
-            // console.log(rating);
-            // var ratingLink = $('<p>').text("Rating: " + rating);
-            // showDiv.append(ratingLink);
-            
-            $("#tvShowView").prepend(showDiv);
+            for (var i = 0; i < results.length; i++) {
+
+                
+                var showDiv = $("<div class='show'>");
+                
+                var showImage = $("<img>");
+                showImage.attr("src", response.data[i].images.fixed_height.url);
+                showDiv.append(showImage);
+                
+                $("#tvShowView").prepend(showDiv);
+            }
         });
     }
     
