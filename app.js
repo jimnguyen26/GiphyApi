@@ -24,8 +24,10 @@ $(document).ready(function() {
 
                 var showDiv = $("<div class='show'>");
                 
+                var showGif = $("<img>");
+                showGif.attr("src", response.data[i].images.original.url);
                 var showImage = $("<img>");
-                showImage.attr("src", response.data[i].images.fixed_height.url);
+                showImage.attr("src", response.data[i].images.original_still.url);
                 showDiv.append(showImage);
 
                 var rating = response.data[i].rating;
@@ -33,10 +35,31 @@ $(document).ready(function() {
                 showDiv.append(ratingText);
                 
                 $("#tvShowView").prepend(showDiv);
+
+                $(".show").on('click', function() {
+                showDiv.html(showGif);
+                
+                });
             }
         });
     }
     
+    $(".gif").on('click', function() {
+    var state = $(this).attr('data-state');
+    console.log(state);
+
+    if (state === 'still') {
+        $(this).attr('data-state', 'animate');
+        let animateUrl = $(this).attr('data-animate');
+        $(this).attr('src', animateUrl);
+        } else {
+        $(this).attr('data-state', 'still');
+        let stillUrl = $(this).attr('data-still');
+        $(this).attr('src', stillUrl);
+        }
+    
+    });
+
     function renderButtons() {
         $("#buttonRow").empty();
         for (var i = 0; i < shows.length; i++) {
