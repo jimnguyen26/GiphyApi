@@ -22,7 +22,6 @@ $(document).ready(function() {
 
             for (var i = 0; i < results.length; i++) {
 
-                
                 var showDiv = $("<div class='show'>");
                 
                 var showImage = $("<img>");
@@ -33,8 +32,6 @@ $(document).ready(function() {
             }
         });
     }
-    
-    
     
     function renderButtons() {
         $("#buttonRow").empty();
@@ -47,10 +44,9 @@ $(document).ready(function() {
         }
     }
     
-    
     $("#addTvShow").on("click", function(event) {
         event.preventDefault();
-        var tvShow = $("tvShowInput").val().trim();
+        var tvShow = $("#tvShowInput").val().trim();
         shows.push(tvShow);
         renderButtons();
     });
