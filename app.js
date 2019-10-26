@@ -37,10 +37,8 @@ $(document).ready(function() {
                 $("#tvShowView").prepend(showDiv);
 
                 $(".show").on('click', function() {
-                // if (showDiv === showGif) {
-                // showDiv.html(showGif);
-                // }
                 showDiv.html(showGif);
+                
                 $(".show").on('click', function() {
                     showDiv.html(showImage);
             });
