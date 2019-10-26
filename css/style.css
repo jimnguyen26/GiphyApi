@@ -1,0 +1,30 @@
+body,
+.jumbotron {
+    background-color: #5f6769;
+}
+
+* {
+    font-family: 'Lakki Reddy', cursive;
+}
+
+button,
+div {
+    margin: 10px;
+}
+
+.gif {
+    margin-left: 20px;
+}
+
+.showBtn,
+#tvShowInput,
+#addTvShow {
+    border-radius: 4px;
+    background-color: #6495ED;
+    color: ivory;
+}
+
+.textBox,
+#addTvShow {
+    margin-left: 20px;
+}

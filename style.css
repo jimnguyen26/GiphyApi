@@ -1,0 +1,31 @@
+body,
+.jumbotron {
+    background-image: url(./css/images/cloudpic.jpg);
+}
+
+* {
+    font-family: 'Lakki Reddy', cursive;
+}
+
+button,
+div {
+    margin: 10px;
+}
+
+.gif {
+    margin-left: 20px;
+    border-radius: 4px;
+}
+
+.showBtn,
+#tvShowInput,
+#addTvShow {
+    border-radius: 4px;
+    background-color: #778899;
+    color: ivory;
+}
+
+.textBox,
+#addTvShow {
+    margin-left: 20px;
+}
